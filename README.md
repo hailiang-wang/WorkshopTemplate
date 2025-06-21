@@ -1,13 +1,15 @@
 # Workshop Template
 
-Being a Teacher.
+Being a Teacher, build workshop with this tempalte.
 
 Create new project.
 
 ```
-git clone 
+WORKSHOP_NAME=YOUR_WORKSHOP_NAME
+git clone https://github.com/hailiang-wang/WorkshopTemplate.git $WORKSHOP_NAME
+cd $WORKSHOP_NAME
+code . # open with VSCode
 ```
-
 
 ## Gen docs
 
