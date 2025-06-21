@@ -11,6 +11,44 @@ cd $WORKSHOP_NAME
 code . # open with VSCode
 ```
 
+Workshop Structure.
+
+```
+WORKSHOP
+├── assets
+│   ├── media
+│   └── _obsidian
+├── COACH.m.md
+├── COACH.pdf
+├── dist
+│   ├── COACH.md
+│   ├── COACH.pdf
+│   ├── MANUAL.md
+│   └── MANUAL.pdf
+├── LICENSE
+├── MANUAL.m.md
+├── MANUAL.pdf
+├── public
+│   └── README.md
+├── README.md
+├── requirements.txt
+├── scripts
+│   ├── gen-doc.sh
+│   ├── gen-obsidian-vault.sh
+│   └── sync-public.sh
+├── session1
+│   ├── README.md
+│   └── README.pdf
+├── session2
+│   ├── README.md
+│   └── README.pdf
+└── workouts
+    ├── README.md
+    ├── README.pdf
+    ├── session1
+    └── session2
+```
+
 ## Gen docs
 
 * Pre-conditions
@@ -25,6 +63,7 @@ HarmonyOS Sans SC
 * Run script
 
 ```bash
+pip install -r requirements.txt
 scripts/gen-doc.sh
 ```
 
