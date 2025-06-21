@@ -29,25 +29,30 @@ fi
 
 echo "Generate Manual ..."
 # Install https://github.com/hailiang-wang/markup-markdown
-markup MANUAL.m.md -o dist/MANUAL.md
+cd $baseDir/../sessions
+rm MANUAL.md
+markup MANUAL.m.md -o MANUAL.md
 
-if [ ! -f dist/MANUAL.md ]; then
-    echo "File dist/MANUAL.md not exist"
+if [ ! -f MANUAL.md ]; then
+    echo "File MANUAL.md not exist"
     exit 1
 else
-    cd dist
+    cd $baseDir/../sessions
     # Fix Char errors
     # https://blog.csdn.net/subtitle_/article/details/127602227
     # Use shell `fc-list :lang=zh` to list all available fonts, e.g. Kaiti
+    rm MANUAL.pdf
     pandoc -i MANUAL.md -o MANUAL.pdf --pdf-engine=xelatex -V CJKmainfont='HarmonyOS Sans SC'
-    cp MANUAL.pdf ../
 
     if [ $? -eq 0 ]; then
         echo "Generate separated files ..."
-        cd $baseDir/..
+        cd $baseDir/../sessions
         for x in *; do
+            cd $baseDir/../sessions
             if [[ -d $x ]] && [[ -f $x/README.md ]]; then
-                pandoc -i $baseDir/../$x/README.md -o $baseDir/../$x/README.pdf --pdf-engine=xelatex -V CJKmainfont='HarmonyOS Sans SC'
+                cd $x
+                rm README.pdf
+                pandoc -i README.md -o README.pdf --pdf-engine=xelatex -V CJKmainfont='HarmonyOS Sans SC'
             fi
         done
     fi
@@ -58,8 +63,17 @@ fi
 
 echo "Generate Coach guidelines ..."
 cd $baseDir/..
-markup COACH.m.md -o dist/COACH.md
-cd dist
+rm COACH.md COACH.pdf
+markup COACH.m.md -o COACH.md
 pandoc -i COACH.md -o COACH.pdf --pdf-engine=xelatex -V CJKmainfont='HarmonyOS Sans SC'
-cp COACH.pdf ../
 echo "Generated COACH.pdf and followings." 
+
+
+echo "Generate Workouts ..."
+cd $baseDir/../workouts
+rm README.md README.pdf
+markup README.m.md -o README.md
+pandoc -i README.md -o README.pdf --pdf-engine=xelatex -V CJKmainfont='HarmonyOS Sans SC'
+
+
+echo "ALL Done."

@@ -15,38 +15,32 @@ Workshop Structure.
 
 ```
 WORKSHOP
-├── assets
+├── assets    # images, docs, etc.
 │   ├── media
 │   └── _obsidian
-├── COACH.m.md
-├── COACH.pdf
-├── dist
-│   ├── COACH.md
-│   ├── COACH.pdf
-│   ├── MANUAL.md
-│   └── MANUAL.pdf
+├── COACH.m.md  # Coach guide lines sources.
+├── COACH.pdf   # Coach guide lines pdf generated with scripts/gen-doc.sh.
 ├── LICENSE
-├── MANUAL.m.md
-├── MANUAL.pdf
 ├── public
 │   └── README.md
 ├── README.md
-├── requirements.txt
+├── requirements.txt # deps to run scripts/gen-doc.sh.
 ├── scripts
-│   ├── gen-doc.sh
-│   ├── gen-obsidian-vault.sh
-│   └── sync-public.sh
-├── session1
-│   ├── README.md
-│   └── README.pdf
-├── session2
-│   ├── README.md
-│   └── README.pdf
+│   ├── gen-doc.sh   # build docs from Markdown files.
+│   ├── gen-obsidian-vault.sh  # setup Obsidian Vault
+│   └── sync-public.sh   # publish files
+├── sessions         # Challenges 
+│   ├── MANUAL.m.md  # Class guide as a whole pdf.
+│   ├── MANUAL.pdf   # generated with scripts/gen-doc.sh.
+│   ├── session1     # session 1, deliver each README.pdf to students, or this session folder with materials.
+│   ├── session2     # session 2
+│   ├── ...          # more sessions
+│   └── sessionN     # session N
 └── workouts
-    ├── README.md
-    ├── README.pdf
-    ├── session1
-    └── session2
+    ├── README.m.md  # workouts README doc.
+    ├── README.pdf   # generated with scripts/gen-doc.sh.
+    ├── session1     # session 1 execise answer sample
+    └── session2     # session 2 execise answer sample
 ```
 
 ## Gen docs
