@@ -10,6 +10,11 @@ header-includes: |
 ---
 
 # session 1
+
+## Png
+
+![](../assets/media/screenshot_20250622092136.png)
+
 ```{=openxml}
  <w:p> <w:r> <w:br w:type="page"/> </w:r> </w:p>
  ```

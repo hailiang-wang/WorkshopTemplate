@@ -32,6 +32,7 @@ echo "Generate Manual ..."
 cd $baseDir/../sessions
 rm MANUAL.md
 markup MANUAL.m.md -o MANUAL.md
+sed -i "s/..\/..\/assets\/media\//..\/assets\/media\//g" MANUAL.md
 
 if [ ! -f MANUAL.md ]; then
     echo "File MANUAL.md not exist"
@@ -51,6 +52,7 @@ else
             cd $baseDir/../sessions
             if [[ -d $x ]] && [[ -f $x/README.md ]]; then
                 cd $x
+                echo "  Processing" `pwd`"/README.md"
                 rm README.pdf
                 pandoc -i README.md -o README.pdf --pdf-engine=xelatex -V CJKmainfont='HarmonyOS Sans SC'
             fi
@@ -61,6 +63,7 @@ else
     echo "Generated MANUAL.pdf and followings." 
 fi
 
+echo ""
 echo "Generate Coach guidelines ..."
 cd $baseDir/..
 rm COACH.md COACH.pdf
@@ -69,11 +72,13 @@ pandoc -i COACH.md -o COACH.pdf --pdf-engine=xelatex -V CJKmainfont='HarmonyOS S
 echo "Generated COACH.pdf and followings." 
 
 
+echo ""
 echo "Generate Workouts ..."
 cd $baseDir/../workouts
 rm README.md README.pdf
 markup README.m.md -o README.md
+sed -i "s/..\/..\/assets\/media\//..\/assets\/media\//g" README.md
 pandoc -i README.md -o README.pdf --pdf-engine=xelatex -V CJKmainfont='HarmonyOS Sans SC'
 
-
+echo ""
 echo "ALL Done."

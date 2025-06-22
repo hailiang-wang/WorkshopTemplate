@@ -22,8 +22,9 @@
     "_config.next.yml"
   ],
   "promptDelete": false,
-  "livePreview": false,
+  "livePreview": true,
   "showLineNumber": true,
   "autoPairBrackets": true,
-  "autoPairMarkdown": false
+  "autoPairMarkdown": false,
+  "defaultViewMode": "preview"
 }
