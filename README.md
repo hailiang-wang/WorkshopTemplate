@@ -2,16 +2,25 @@
 
 Being a Teacher, build workshop with this tempalte.
 
-Create new project.
+Create a new project.
 
 ```
-WORKSHOP_NAME=YOUR_WORKSHOP_NAME
-git clone https://github.com/hailiang-wang/WorkshopTemplate.git $WORKSHOP_NAME
-cd $WORKSHOP_NAME
+export WORKSHOP_NAME=YOUR_WORKSHOP_NAME
+mkdir $WORKSHOP_NAME && cd "$_"
+curl -L https://github.com/hailiang-wang/WorkshopTemplate/tarball/master | tar xz --strip-components=1
 code . # open with VSCode
 ```
 
-Workshop Structure.
+e.g.
+
+```
+export WORKSHOP_NAME=llm-tangshan2025
+mkdir $WORKSHOP_NAME && cd "$_"
+curl -L https://github.com/hailiang-wang/WorkshopTemplate/tarball/master | tar xz --strip-components=1
+code . # open with VSCode
+```
+
+## Workshop Structure
 
 ```
 WORKSHOP
@@ -52,6 +61,7 @@ Python 3.11
 Pandoc 3.6+
 LaTex pdf-engine=xelatex
 HarmonyOS Sans SC
+sed
 ```
 
 * Run script
@@ -85,3 +95,7 @@ Write docs with [Obsidian](https://obsidian.md/).
 ```
 ./scripts/gen-obsidian-vault.sh
 ```
+
+## Others
+
+* [Workshop Template](https://github.com/hailiang-wang/WorkshopTemplate)
