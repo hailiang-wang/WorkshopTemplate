@@ -73,10 +73,18 @@ scripts/gen-doc.sh
 
 Then, deliver classes with session1-N/README.pdf. The whole class manual is at dist/MANUAL.pdf
 
-## Upload public files
+## Commit updates
+
+### Upload public files
 
 ```bash
 scripts/sync-public.sh
+```
+
+### Commit git
+
+```bash
+./scripts/commit.sh "Add script"
 ```
 
 ## Coach
