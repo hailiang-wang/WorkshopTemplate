@@ -90,11 +90,24 @@ Workouts are sample answers of session exercises.
 
 ## Write docs
 
+### Writting in Obsidian
+
 Write docs with [Obsidian](https://obsidian.md/).
 
 ```
 ./scripts/gen-obsidian-vault.sh
 ```
+
+### Generate Sessions in Batch
+
+```bash
+cd sessions
+mkdir session{1..8}
+touch session{1..8}/README.md
+for x in {1..8}; do echo "# session $x" > session$x/README.md; done
+```
+
+Next, include the README.md in sessions/MANUAL.m.md.
 
 ## Others
 
